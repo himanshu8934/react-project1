@@ -1,6 +1,7 @@
 
 import './App.css';
-import Expenses from './Components/Expenses'
+import Expenses from './Components/Expenses/Expenses'
+import NewExpenses from './Components/New Expenses/NewExpenses';
 
 function App() {
   const expenses = [
@@ -25,10 +26,17 @@ function App() {
     },
   ];
 
+  const newExpenseData = (data) =>{
+    console.log(data)
+  }
+  const filterData = (data) =>{
+    console.log(data)
+  }
   return (
     <div className="App">
       <h2>Let's gets</h2>
-      <Expenses items={expenses} />
+      <NewExpenses onNewExpenseData={newExpenseData}/>
+      <Expenses items={expenses} onFilter={filterData}/>
     </div>
   );
 }
